@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Lab</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            margin: 0;
+            padding: 30px 15px;
+            color: #222;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #183b63;
+        }
+
+        .notice {
+            background: #fff4d6;
+            border-left: 4px solid #e5a000;
+            padding: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            background: #183b63;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #24578c;
+        }
+
+        #result {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e5f5e9;
+            border-radius: 6px;
+            line-height: 1.5;
+        }
+
+        .tips {
+            margin-top: 28px;
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #666;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Phishing Awareness Lab</h1>
+
+    <p>
+        Welcome to this educational cybersecurity demonstration.
+        This page shows how a login form can be used to trick people.
+    </p>
+
+    <div class="notice">
+        <strong>Safety notice:</strong>
+        This is a classroom simulation. Do not enter real usernames
+        or passwords. Nothing entered here is transmitted or stored.
+    </div>
+
+    <form id="demoForm">
+
+        <label for="username">Example Username</label>
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter a fictional username"
+            autocomplete="off"
+        >
+
+        <label for="password">Example Password</label>
+        <input
+            type="password"
+            id="password"
+            placeholder="Use a fictional password only"
+            autocomplete="off"
+        >
+
+        <button type="submit">Run Demonstration</button>
+
+    </form>
+
+    <div id="result">
+        <strong>Demonstration complete!</strong>
+        <p>
+            This form did not send or save any information.
+            In a real phishing attack, a fake login page may attempt
+            to steal your credentials.
+        </p>
+    </div>
+
+    <div class="tips">
+        <h2>How to Recognize Phishing</h2>
+
+        <ul>
+            <li>Check the website address carefully.</li>
+            <li>Be careful with unexpected login links.</li>
+            <li>Never share your password through suspicious links.</li>
+            <li>Look for spelling mistakes and unusual messages.</li>
+            <li>Enable two-factor authentication.</li>
+        </ul>
+    </div>
+
+    <footer>
+        Cybersecurity Classroom Project | Educational Use Only
+    </footer>
+
+</div>
+
+<script>
+    document.getElementById("demoForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("result").style.display = "block";
+
+        // Clear the password field immediately.
+        document.getElementById("password").value = "";
+    });
+</script>
+
+</body>
+</html>
